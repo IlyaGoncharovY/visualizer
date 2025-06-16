@@ -7,7 +7,7 @@
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+ color: #f1d757;
   /* ===flex свойста=== */
   --flex-display: flex;
 
