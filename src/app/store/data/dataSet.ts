@@ -1,4 +1,10 @@
-import type {visualizerDataType} from '@/features/column/types';
+import type {categoryType, visualizerDataType} from '@/features/column/types';
+
+export const categories: categoryType[] = [
+  'Граждане РФ',
+  'Граждане стран ближнего зарубежья',
+  'Граждане стран дальнего зарубежья',
+];
 
 export const visualizerData: visualizerDataType[] = [
   {
