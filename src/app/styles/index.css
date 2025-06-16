@@ -1,0 +1,74 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* ===flex свойста=== */
+  --flex-display: flex;
+
+  /* flex центр */
+  --justify-content-center: center;
+  --align-items-center: center;
+
+  /* flex по ширине */
+  --justify-content-by-width: space-between;
+
+  /* flex по высоте */
+  --flex-direction-by-height: column;
+
+  /* ===flex свойста=== */
+
+  /* Цвета */
+
+  /* ============= */
+
+  /* ===цвета основные=== */
+  --main-illustration-background: #fffffe;
+  --main-illustration-background-secondary: #90b4ce;
+  --main-illustration-background-tertiary: #ef4565;
+  --main-illustration-border: #094067;
+  --main-illustration-highlight: #3da9fc;
+  --main-elements-background: #fffffe;
+  --main-elements-headline: #094067;
+  --main-elements-paragraph: #5f6c7b;
+  --main-elements-button-background: #3da9fc;
+  --main-elements-button-text: #fffffe;
+
+  /* ===цвета основные=== */
+
+  /* ===цвета дополнительные=== */
+  --background-color-blue-100: #1a8cbf;
+  --background-color-blue-200: #229ED9;
+  --background-color-blue-300: #08c;
+  --background-color-blue-400: #0075b5;
+  --color-white-100: #ccc;
+  --color-white-200: #fffc;
+  --color-white-300: white;
+  --color-blue: #08c;
+  --color-gray: #666;
+  --box-shadow-color: rgb(0 0 0 / 10%);
+  --color-success-100: #d9f7be;
+  --color-success: #28a745;
+  --color-error-100: #ffe2e2;
+  --color-error: #dc3545;
+  --color-info: #007bff;
+
+  /* ===цвета дополнительные=== */
+
+  /* ============= */
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    color: var(--main-elements-paragraph);
+    background: var(--main-elements-headline);
+    margin: 0;
+    padding: 0;
+  }
+}
