@@ -7,7 +7,7 @@
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- color: #f1d757;
+
   /* ===flex свойста=== */
   --flex-display: flex;
 
@@ -57,6 +57,9 @@
   --color-error-100: #ffe2e2;
   --color-error: #dc3545;
   --color-info: #007bff;
+  --color-rf: #57c6f1;
+  --color-near: #8884d8;
+  --color-far: #c557f1;
 
   /* ===цвета дополнительные=== */
 

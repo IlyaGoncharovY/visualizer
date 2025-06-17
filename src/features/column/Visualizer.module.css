@@ -1,0 +1,12 @@
+.visualizerContainer {
+    padding: 2rem;
+
+    h2 {
+        color: var(--color-white-300);
+    }
+
+    p {
+        color: var(--color-rf);
+        font-weight: bold;
+    }
+}

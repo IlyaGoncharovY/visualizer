@@ -1,0 +1,12 @@
+.categoryFilterContainer {
+    select {
+        color: var(--main-elements-paragraph);
+        background-color: inherit;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        outline: none;
+        appearance: none;
+        cursor: pointer;
+    }
+}

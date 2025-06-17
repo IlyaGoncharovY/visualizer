@@ -1,13 +1,20 @@
+import s from './Visualizer.module.css';
 
-import {CategoryFilter, ChartWrapper, ChildrenToggleButton} from '@/features/column/components';
+import {CategoryFilter, ChartWrapper, ChildrenToggleButton, VisualizerHeader} from '@/features/column/components';
+import {WrapperContainerByWidth} from '@/shared/components';
+
 
 export const Visualizer = () => {
+
   return (
-    <div style={{padding: '2rem'}}>
-      <h2 style={{marginBottom: '1rem'}}>Динамика туристского потока</h2>
-      <p>Итого: </p>
-      <CategoryFilter/>
-      <ChildrenToggleButton/>
+    <div className={s.visualizerContainer}>
+      <WrapperContainerByWidth>
+        <VisualizerHeader/>
+      </WrapperContainerByWidth>
+      <WrapperContainerByWidth>
+        <CategoryFilter/>
+        <ChildrenToggleButton/>
+      </WrapperContainerByWidth>
       <ChartWrapper/>
     </div>
   );

@@ -9,6 +9,32 @@ export const selectRawData = (state: RootState) => state.column.rawData;
 export const selectCategories = (state: RootState) => state.column.selectedCategories;
 export const selectShowChildren = (state: RootState) => state.column.showChildren;
 
+/**
+ * Возвращает нормализованные данные для построения диаграммы на основе выбранных категорий или данных по детям.
+ *
+ * Включает расчет сумм по категориям или по детям за каждый год, а также расчет CAGR (среднегодового темпа роста).
+ *
+ * @param state - Redux состояние приложения.
+ * @returns Массив объектов, содержащих год, значения по категориям или по детям, и рассчитанный CAGR.
+ *
+ * @example
+ * // При selectedCategories = ['Граждане РФ', 'Граждане стран ближнего зарубежья']
+ * selectFilteredChartData(state);
+ * // [
+ * //   { year: 2020, 'Граждане РФ': 78, 'Граждане стран ближнего зарубежья': 15, CAGR: 0 },
+ * //   { year: 2021, 'Граждане РФ': 102, 'Граждане стран ближнего зарубежья': 18, CAGR: 23.08 },
+ * //   { year: 2022, 'Граждане РФ': 138, 'Граждане стран ближнего зарубежья': 24, CAGR: 31.25 }
+ * // ]
+ *
+ * @example
+ * // При включенном showChildren
+ * selectFilteredChartData(state);
+ * // [
+ * //   { year: 2020, Дети: 0, CAGR: 0 },
+ * //   { year: 2021, Дети: 0, CAGR: 0 },
+ * //   { year: 2022, Дети: 252, CAGR: 100 }
+ * // ]
+ */
 export const selectFilteredChartData = createSelector(
   [selectRawData, selectCategories, selectShowChildren],
   (data, selectedCategories, showChildren) => {
@@ -53,6 +79,22 @@ export const selectFilteredChartData = createSelector(
   },
 );
 
+/**
+ * Возвращает максимальное абсолютное значение CAGR (среднегодового темпа роста) из нормализованных данных.
+ *
+ * Используется для задания оси Y справа на графике (в процентах).
+ *
+ * @param state - Redux состояние приложения.
+ * @returns Максимальное значение CAGR по модулю, округлённое вверх до ближайшего целого.
+ *
+ * @example
+ * selectMaxAbsCAGR(state);
+ * // 32 — если максимальный по модулю CAGR = 31.25
+ *
+ * @example
+ * selectMaxAbsCAGR(stateWithEmptyData);
+ * // 10 — если данные отсутствуют или невалидны
+ */
 export const selectMaxAbsCAGR = createSelector(
   [selectFilteredChartData],
   (filteredData) => {

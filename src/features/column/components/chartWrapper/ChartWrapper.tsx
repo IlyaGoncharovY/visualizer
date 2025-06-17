@@ -27,16 +27,18 @@ export const ChartWrapper = () => {
         <Legend />
 
         {showChildren
-          ? <Bar yAxisId="left" dataKey="Дети" fill="#8884d8" />
+          ? <Bar yAxisId="left" dataKey="Дети" fill="var(--color-near)" />
           : [
             selectedCategories.includes('Граждане РФ') && (
-              <Bar key="rf" yAxisId="left" dataKey="Граждане РФ" stackId="a" fill="#57c6f1" />
+              <Bar key="rf" yAxisId="left" dataKey="Граждане РФ" stackId="a" fill="var(--color-rf)" />
             ),
             selectedCategories.includes('Граждане стран ближнего зарубежья') && (
-              <Bar key="near" yAxisId="left" dataKey="Граждане стран ближнего зарубежья" stackId="a" fill="#8884d8" />
+              <Bar key="near"
+                yAxisId="left" dataKey="Граждане стран ближнего зарубежья" stackId="a" fill="var(--color-near)" />
             ),
             selectedCategories.includes('Граждане стран дальнего зарубежья') && (
-              <Bar key="far" yAxisId="left" dataKey="Граждане стран дальнего зарубежья" stackId="a" fill="#c557f1" />
+              <Bar key="far"
+                yAxisId="left" dataKey="Граждане стран дальнего зарубежья" stackId="a" fill="var(--color-far)" />
             ),
           ]}
 

@@ -34,8 +34,11 @@ const columnSlice = createSlice({
     toggleChildren: (state) => {
       state.showChildren = !state.showChildren;
     },
+    setCategories: (state, action: PayloadAction<categoryType[]>) => {
+      state.selectedCategories = action.payload;
+    },
   },
 });
 
-export const { setSelectedYear, toggleCategory, toggleChildren } = columnSlice.actions;
+export const { setSelectedYear, toggleCategory, toggleChildren, setCategories } = columnSlice.actions;
 export default columnSlice.reducer;
