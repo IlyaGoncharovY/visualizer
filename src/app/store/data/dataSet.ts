@@ -1,15 +1,10 @@
-import type {Nullable} from '@/shared';
+import type {categoryType, visualizerDataType} from '@/features/column/types';
 
-export type visualizerDataType = {
-    id: number;
-    year: number;
-    region: Nullable<string>;
-    country: Nullable<string>;
-    category: string;
-    withChildren: boolean;
-    countTurist: number;
-    countTuristBeforeYear: number;
-};
+export const categories: categoryType[] = [
+  'Граждане РФ',
+  'Граждане стран ближнего зарубежья',
+  'Граждане стран дальнего зарубежья',
+];
 
 export const visualizerData: visualizerDataType[] = [
   {
