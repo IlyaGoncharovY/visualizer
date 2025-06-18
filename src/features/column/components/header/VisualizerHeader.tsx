@@ -4,7 +4,7 @@ export const VisualizerHeader = () => {
   const {countTurists} = useCountTurists();
   return (
     <>
-      <h2>Динамика туристского потока</h2>
+      <h2>Динамика туристического потока</h2>
       <p>Итого: {countTurists}</p>
     </>
   );
